@@ -10,7 +10,7 @@ class SendController extends Controller
         return view('homepage');
     }
 
-    public function sendMessage (Request $request) {
-        $message = $request->query('message'); 
+    public function save (Request $request) {
+        print_r($request->input());
     }
 }

@@ -19,6 +19,8 @@
                 font-family: 'Nunito';
             }
         </style>
+
+        <!-- Css bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     </head>
     <body class="antialiased">
@@ -42,11 +44,11 @@
                 <h1 style="color: white; text-align: center">Esta é a minha primeira aplicação em laravel!</h1>
                 <center>
                    <div class="container-fluid">
-                        <form method="get">
+                        <form method="post">
                         @csrf
                             <div class="input-group mb-3">
                                 <!-- <input type="text" style="text-align: center" class="form-control" placeholder="Escreva qualquer coisa" aria-label="Username" aria-describedby="basic-addon1"> -->
-                                <textarea id="message" name="message" class="form-control" placeholder="Escreva qualquer coisa!" aria-label="With textarea" rows="4"></textarea>
+                                <textarea maxlength="1500" id="message" name="message" class="form-control" placeholder="Escreva qualquer coisa!" aria-label="With textarea" rows="4"></textarea>
                             </div>
                             
                             <div class="row" style="text-align: right;">                                

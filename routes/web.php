@@ -15,4 +15,7 @@ use App\Http\Controllers\SendController;
 |
 */
 
-Route::get('/', [SendController::class,'index']);
+Route::get('/', [SendController::class, 'index']);
+
+Route::view('form', 'homepage');
+Route::post('submit', [SendController::class, 'save']);

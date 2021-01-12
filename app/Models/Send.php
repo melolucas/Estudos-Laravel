@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Send extends Model
 {
-    use HasFactory;
-    protected $table = 'messages';
-
-    
+    protected $fillable = [
+        'message'
+    ]
 }
