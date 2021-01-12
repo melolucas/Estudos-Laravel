@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 class SendController extends Controller
 {
-    public function index (Request $request) {
-        $message = $request->query('message');
+    public function index () {
+        return view('homepage');
+    }
 
-        return view('homepage', ['message' => $message]);
+    public function sendMessage (Request $request) {
+        $message = $request->query('message'); 
     }
 }
