@@ -44,7 +44,7 @@
                 <h1 style="color: white; text-align: center">Esta é a minha primeira aplicação em laravel!</h1>
                 <center>
                    <div class="container-fluid">
-                        <form method="post">
+                        <form method="post" action="submit">
                         @csrf
                             <div class="input-group mb-3">
                                 <!-- <input type="text" style="text-align: center" class="form-control" placeholder="Escreva qualquer coisa" aria-label="Username" aria-describedby="basic-addon1"> -->
@@ -54,10 +54,10 @@
                             <div class="row" style="text-align: right;">                                
                                 <h3>
                                     <button type="submit" class="btn btn-outline-primary">Enviar</button>
-                                    <button type="button" class="btn btn-outline-danger">Apagar</button>
+                                    <button id="clear" type="reset" class="btn btn-outline-danger" onclick="alert('Você limpou o campo de mensagem')">Apagar</button>
                                 </h3>                                
                             </div>                            
-                        </form>
+                        </form>                      
 
                         <div class="container">
                             <p class="" style="text-align: justify; color: white">Algoritimo:<br>
@@ -66,11 +66,32 @@
                             Sempre que ele encontrar uma nova mensagem ele vai me envia-la via telegram e dar um update no banco de dados mostrando que a mensagem foi notificada.
                             </p>
                         </div>
+
+                        @if(Session::get('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                            <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div> -->
+                        @endif
+
+                        @if(Session::get('fail'))
+                            <div class="alert alert-danger">
+                                {{Session::get('fail')}}
+                            </div>
+                        @endif
                    </div>
                 </center>
             </div>
         </div>
         <!-- bootstrap script -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>   
+        <script>
+            $(".alert").alert('close')
+        </script>
     </body>
 </html>
