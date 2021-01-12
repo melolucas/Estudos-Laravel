@@ -42,28 +42,34 @@
                 <h1 style="color: white; text-align: center">Esta é a minha primeira aplicação em laravel!</h1>
                 <center>
                    <div class="container-fluid">
-                        <form action="">
+                        <form method="get">
                         @csrf
                             <div class="input-group mb-3">
                                 <!-- <input type="text" style="text-align: center" class="form-control" placeholder="Escreva qualquer coisa" aria-label="Username" aria-describedby="basic-addon1"> -->
-                                <textarea class="form-control" placeholder="Escreva qualquer coisa!" aria-label="With textarea" rows="4"></textarea>
+                                <textarea id="message" name="message" class="form-control" placeholder="Escreva qualquer coisa!" aria-label="With textarea" rows="4"></textarea>
                             </div>
                             
                             <div class="row" style="text-align: right;">                                
                                 <h3>
-                                    <button type="button" class="btn btn-outline-primary">Enviar</button>
+                                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
                                     <button type="button" class="btn btn-outline-danger">Apagar</button>
                                 </h3>                                
-                            </div>
-
-                            <div class="container">
-                                <p class="" style="text-align: justify; color: white">Algoritimo:<br>
-                                1- O app deve pegar a mensagem digitada e enviar para o banco de dados. <span style="color: red;">(Deve haver um captcha)</span><br>
-                                2 - Um bot de telegram ira ficar rodando e verificando se há novas mensagens no banco.
-                                Sempre que ele encontrar uma nova mensagem ele vai me envia-la via telegram e dar um update no banco de dados mostrando que a mensagem foi notificada.
-                                </p>
-                            </div>
+                            </div>                            
                         </form>
+
+                        <div class="container">
+                            <p class="" style="color: white">
+                                Resultado da variavél message = <span style="color: green">{{$message}}</span>
+                            </p>
+                        </div>
+
+                        <div class="container">
+                            <p class="" style="text-align: justify; color: white">Algoritimo:<br>
+                            1- O app deve pegar a mensagem digitada e enviar para o banco de dados. <span style="color: red;">(Deve haver um captcha)</span><br>
+                            2 - Um bot de telegram ira ficar rodando e verificando se há novas mensagens no banco.
+                            Sempre que ele encontrar uma nova mensagem ele vai me envia-la via telegram e dar um update no banco de dados mostrando que a mensagem foi notificada.
+                            </p>
+                        </div>
                    </div>
                 </center>
             </div>
